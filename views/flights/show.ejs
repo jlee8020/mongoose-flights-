@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<section id="show-page">
+  <h2>Flight Details</h2>
+  <div>Airline: </div>
+  <div><%= f.airline %></div>
+  <div>Flight No: </div>
+  <div><%= f.flightNo %></div>
+  <div>Departs: </div>
+  <div><%= f.departs %></div>
+  <div>onAir: </div>
+  <div><%= f.onAir ? 'Yes' : 'No' %></div>
+</section>
+
+
+
+<%- include('../partials/footer') %>
