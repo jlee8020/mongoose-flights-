@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-
 //step 4
 const Schema = mongoose.Schema;
+
 
 const destinationSchema = new Schema({
   content: String,
@@ -20,7 +20,6 @@ const destinationSchema = new Schema({
 }, {
   timestamps: true
 });
-
 
 
 //step 5
