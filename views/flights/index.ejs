@@ -11,7 +11,8 @@
 <div class='container'>  
   <table id='list'>
     <h1>FLIGHT LIST</h1>
-    <thead class='labels'>
+    <div class='title'>
+    <thead>
         <th>Airline</th><br><br>
         <th>Flight No.</th>
         <th>Origin</th>
@@ -19,6 +20,7 @@
         <th>In Air</th>
       </tr>
     </thead>
+    </div>
     <br>
     <tbody>
       <% flights.forEach(function(f) { %>
@@ -38,7 +40,9 @@
         <% }); %>
       </tbody>
     </table>
+    <div class='addFlight'>
     <a href="/flights/new">Add a Flight</a> 
+  </div>
 </div> 
     <script src="" async defer></script>
 </body>

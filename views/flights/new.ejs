@@ -1,5 +1,14 @@
 <%- //include('../partials/header') %>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+  <body>
+  <div class='container2'>  
   <form id="new-form" action="/flights/new" method="POST">
     <label>Airline (select one):
       <select name="airline">
@@ -9,11 +18,12 @@
         <option value="Spirit Airlines">Spirit Airlines</option>
         <option value="United Airlines">United Airlines</option>
       </select>
-    </label><br><br><br><br><br><br><br>
-    
+    </label>
+    <div>
     <label>Flight No (3 digits):</label>
     <input type="text" name="flightNo">
-    <br>
+    </div>
+    <div>
     <label>Origin:</label>
       <select name="origin">
         <option value="AUS">AUS</option>
@@ -22,16 +32,26 @@
         <option value="LAX">LAX</option>
         <option value="SFO">SFO</option>
       </select>
-      
+    </div>
+    <div>
     <label>Departure Date:
       <input type="datetime-local" id="departure-date" name="departs"
               name="departure-date" value="2020-02-12T19:30"
               min="2019-01-01T00:00" max="2020-12-31T00:00">
     </label><br>
+    </div>
+    <div>
     <label>In Air:
       <input type="checkbox" name="onAir" checked>
-    </label><br>
+    </label>
+    </div>
+    <div>
     <input type="submit" value="Add Flight">
-  </form>
+    </div>
+    </form>
+</div>
+  <script src="" async defer></script>
+  </body>
+</html>
 
   

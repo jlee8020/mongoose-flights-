@@ -6,6 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+.container2{
+  display: flex;
+  padding: 40px;
+  width: 400px;
+  text-align: center;
+  flex-direction: row;
+  background-color: aqua;
+  margin: auto;
+  justify-content: center;
+  font-size: medium;
+  align-items: center;
+}
 .container{
   display: flex;
   width: 900px;
@@ -14,6 +26,16 @@ a {
   background-color: aqua;
   margin: auto;
   justify-content: center;
+}
+.container3{
+  display: flex;
+  width: 900px;
+  text-align: center;
+  flex-direction: column;
+  background-color: aqua;
+  margin: auto;
+  justify-content: center;
+  padding: 20px;
 }
 .delete-form {
   display: inline-block;
@@ -25,9 +47,16 @@ h1{
   border: solid gray;
   background-color: gray;
   margin: 0;
-  padding: 20px;
+  padding: 5px;
 }
 
+.addFlight{
+  text-align: center;
+  border: solid gray;
+  background-color: gray;
+  margin: 0;
+  padding: 10px;
+}
 .delete-form button {
   color: red;
 }
@@ -51,6 +80,11 @@ li {
 .labels{
   align-content: center;
   font-size: medium;
-  margin: 0;
   border: solid gray;
+  margin: 0 auto;
+
+}
+.title{
+  align-content: center;
+  text-align: center
 }

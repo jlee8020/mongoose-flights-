@@ -1,31 +1,39 @@
 <%- //include('../partials/header') %>
-<div class='details'>
-<section id="show-page">
-  <h2>Flight Details</h2><br>
-  <div>Airline: </div>
-  <div><%= flights.airline %></div><br>
-  <div>Flight No: </div>
-  <div><%= flights.flightNo %></div><br>
-  <div>Origin: </div>
-  <div><%= flights.origin %></div><br>
-  <div>Departure Date: </div>
-  <div><%= flights.departs %></div><br>
-  <div>In Air: </div>
-  <div><%= flights.onAir ? 'Yes' : 'No' %></div><br>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+<div class='container3'>
+  <section id="show-page">
+    <h2>Flight Details</h2><br>
+    <div>Airline: </div>
+    <div><%= flights.airline %></div><br>
+    <div>Flight No: </div>
+    <div><%= flights.flightNo %></div><br>
+    <div>Origin: </div>
+    <div><%= flights.origin %></div><br>
+    <div>Departure Date: </div>
+    <div><%= flights.departs %></div><br>
+    <div>In Air: </div>
+    <div><%= flights.onAir ? 'Yes' : 'No' %></div>
+  </section>
+  <div>
+  <form id="add-destination" method="POST"
+  action ="/flights/<%= flights._id %>/destinations">
 
-
-<form id="add-destination" method="POST"
-action ="/flights/<%= flights._id %>/destinations">
-
-<label>Destination Airport:</label>
-<select name="destination">
+  <label>Destination Airport:</label>
+  <select name="destination">
   <option value="AUS">AUS</option>
   <option value="DFW">DFW</option>
   <option value="DEN">DEN</option>
   <option value="LAX">LAX</option>
   <option value="SFO">SFO</option>
-</select>
+  </select>
   <label>Arrival Time:
   <input type="datetime-local" id="arrival-date" name="arrives"
               name="arrival-date" value="2020-02-12T19:30"
@@ -33,44 +41,51 @@ action ="/flights/<%= flights._id %>/destinations">
   </label>
   <input type="submit" value="Add Destination">
 </form>
-
-<br><br>
+</div>
+<br>
+<div>
 <a href='/flights/<%= flights._id %>/tickets/new/'>Add Ticket</a>
-
+</div>
+<div>
 <h2>Ticket Info</h2>
 <% if(tickets.length) { %>
 <% tickets.forEach(function(t) { %>
 <br>
-<div>Seat: 
-<%= t.seat %></div>
-<div>Price: $
-<%= t.price %></div>
-<div> 
-<form action="/flights/<%= flights._id %>/tickets/<%= t._id %>?_method=DELETE" method="POST">
-  <button>X</button>
+<td>Seat: <%= t.seat %><td>
+<td>Price: $<%= t.price %><td>
+  <form action="/flights/<%= flights._id %>/tickets/<%= t._id %>?_method=DELETE" method="POST"><button>X</button>
+  </form>
+  </td>
+<td>
 </div>
-</form>
-</td>
-
 <% })}; %>
 <div>
 <br><h2>Arrival Info</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Destination</th>
-      <th>Arrival Date</th>
-      </tr>
-  </thead>
-  <tbody>
-    <% if(flights.destinations.length) { %>
-    <% flights.destinations.forEach(function(f) { %>
-      <tr>
-        <td><%= f.destination %></td>
-        <td><%= f.arrives %></td>
-      </tr>
-    <% })}; %>
-  </tbody>
-</table>
+</div>
+        <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Destination</th>
+              <th>Arrival Date</th>
+              </tr>
+          </thead>
+          <br>
+          <div>
+          <tbody>
+            <% if(flights.destinations.length) { %>
+            <% flights.destinations.forEach(function(f) { %>
+              <tr>
+                <td><%= f.destination %></td>
+                <td><%= f.arrives %></td>
+              </tr>
+            <% })}; %>
+          </tbody>
+          </div>
+          </table>
+          </div>
 </div>
 </div>
+<script src="" async defer></script>
+</body>
+</html>
