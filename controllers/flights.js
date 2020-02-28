@@ -5,7 +5,8 @@ module.exports = {
     index,
     show,
     new: newFlight,
-    createFlight
+    createFlight,
+    delete: deleteOne
 };
 //
 function show(req, res) {
@@ -30,21 +31,39 @@ function newFlight(req,res){
   res.render('flights/new', {title: 'Add Flight'});
 }
 
+// function createFlight(req, res) {
+//   req.body.onAir = !!req.body.onAir;
+// // console.log(req.body)
+
+// if(!req.body.departs){
+//   var redate = new Date();
+//   redate.setFullYear(redate.getFullYear()+1);
+//   req.body.departs = redate
+// }
+
+// const flight = new Flight(req.body);
+// flight.save(function(err) {
+// if (err)  {return res.redirect('flights/new', {title: 'Add Flight'});}
+//   res.redirect('/flights');
+//     });
+// }
+
 function createFlight(req, res) {
   req.body.onAir = !!req.body.onAir;
-// console.log(req.body)
-
-if(!req.body.departs){
-  var redate = new Date();
-  redate.setFullYear(redate.getFullYear()+1);
-  req.body.departs = redate
+  if(!req.body.departs){
+      var redate = new Date();
+      redate.setFullYear(redate.getFullYear()+1);
+      req.body.departs = redate
+  }
+  var flight = new Flight(req.body);
+  flight.save(function(err) {
+      if (err) return res.redirect('/flights/new', {title: 'Add Flight'});
+      res.redirect('/flights');
+  });
 }
 
-const flight = new Flight(req.body);
-flight.save(function(err) {
-if (err)
-  return res.redirect('flights/new', {title: 'Add Flight'})
-  res.redirect('/flights');
-    });
+function deleteOne(req, res){
+  Flight.findByIdAndDelete(req.params.id, function(err,flight){
+    res.redirect('/flights/');
+});
 }
-

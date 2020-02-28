@@ -24,3 +24,9 @@ const Ticket = require('../models/ticket');
      });
    }
 
+// function deleteOne(req, res){
+//   Ticket.findByIdAndDelete(req.params.ticketId, function(err, ticket){
+//     res.redirect()
+//   })
+
+// }
