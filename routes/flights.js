@@ -7,9 +7,9 @@ router.get('/', flightsCtrl.index);
 //GET /flights/new
 router.get('/new', flightsCtrl.new);
 
-router.get('/:id', flightsCtrl.show);
 // POST /flights
-router.post('/', flightsCtrl.create);
+router.post('/new', flightsCtrl.createFlight);
 
+router.get('/:id', flightsCtrl.show);
 
 module.exports = router;

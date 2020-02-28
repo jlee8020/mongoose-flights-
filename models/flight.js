@@ -17,8 +17,6 @@ const destinationSchema = new Schema({
     },
   },
 
-}, {
-  timestamps: true
 });
 
 
@@ -35,10 +33,22 @@ const flightSchema = new Schema({
         min: 10,
         max: 9999,
     },
+    origin:{
+      type: String,
+      enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SFO'],
+      required: true,
+    },
+
     departs: {
       type: Date, 
-      default: function() {
-        return new Date().getFullYear();
+      default: function (){
+
+        var d = new Date() 
+        var day = d.getDate();
+        var month = d.getMonth();
+        var year = d.getFullYear();
+        var c = new Date (month + day + (year + 1))
+        return new Date();
       },
     },
     onAir: {type: Boolean, default: false},

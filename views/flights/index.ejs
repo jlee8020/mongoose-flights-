@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Cuisine List</title>
-</head>
-<body>
-  <div class='container'>
-  <h2>Flight List</h2><br>
+<%- //include('../partials/header') %>
   <table id='list'>
     <thead>
       <tr>
         <th>Airline</th>
         <th>Flight No.</th>
+        <th>Origin</th>
         <th>Departure Date</th>
-        <th>Now onAir</th>
+        <th>In Air</th>
       </tr>
     </thead>
     <tbody>
@@ -24,6 +14,7 @@
         <tr>
           <td><%= f.airline %></td>
           <td><%= f.flightNo %></td>
+          <td><%= f.origin %></td>
           <td><%= f.departs %></td>
           <td><%= f.onAir ? 'Yes' : 'No' %></td>    
           <td><a href="/flights/<%= f._id %>">Details</a></td>
@@ -31,7 +22,7 @@
         <% }); %>
       </tbody>
     </table>
-    <a href="/flights/new">Add a Flight</a>
-  </div>
+    <a href="/flights/new">Add a Flight</a> 
+  </div> 
 </body>
 </html>
