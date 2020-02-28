@@ -1,5 +1,5 @@
 <%- //include('../partials/header') %>
-<div container='details'>
+<div class='details'>
 <section id="show-page">
   <h2>Flight Details</h2><br>
   <div>Airline: </div>
@@ -13,6 +13,7 @@
   <div>In Air: </div>
   <div><%= flights.onAir ? 'Yes' : 'No' %></div><br>
 </section>
+
 
 <form id="add-destination" method="POST"
 action ="/flights/<%= flights._id %>/destinations">

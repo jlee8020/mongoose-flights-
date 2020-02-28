@@ -1,8 +1,6 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: aqua;
-
 }
 
 a {
@@ -10,12 +8,12 @@ a {
 }
 .container{
   display: flex;
-  width: 650px;
+  width: 900px;
   text-align: center;
   flex-direction: column;
+  background-color: aqua;
   margin: auto;
   justify-content: center;
-  border-style: solid rgba(0, 0, 255, 0.712)
 }
 .delete-form {
   display: inline-block;
@@ -25,7 +23,9 @@ a {
 h1{
   text-align: center;
   border: solid gray;
-  background-color: wheat;
+  background-color: gray;
+  margin: 0;
+  padding: 20px;
 }
 
 .delete-form button {
@@ -48,6 +48,9 @@ li {
   margin-bottom: 2rem;
 }
 
-.container {
-  display: flex;
+.labels{
+  align-content: center;
+  font-size: medium;
+  margin: 0;
+  border: solid gray;
 }
